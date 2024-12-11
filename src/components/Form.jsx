@@ -26,8 +26,7 @@ function Form() {
   // @desc Logs the value
   const handleCheckbox = (value, checked) => {
     setSelectedServices((prevState) => {
-      const updatedServices = [...prevState];
-      updatedServices.push(value);
+      const updatedServices = checked ? [...prevState, value] : prevState.filter((service) => service !== value);
       return updatedServices;
     });
   };
